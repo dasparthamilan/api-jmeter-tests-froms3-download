@@ -163,7 +163,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -217,7 +217,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET_JsonPlaceholderHTTP Request" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET_JsonPlaceholderHTTP Request">
           <stringProp name="HTTPSampler.domain">jsonplaceholder.typicode.com</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/posts/${postId}</stringProp>
@@ -243,7 +243,7 @@
           </CSVDataSet>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST_JsonPlaceholderHTTP Request" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST_JsonPlaceholderHTTP Request">
           <stringProp name="HTTPSampler.domain">jsonplaceholder.typicode.com</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/posts</stringProp>
@@ -272,7 +272,7 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT_JsonPlaceholderHTTP Request" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT_JsonPlaceholderHTTP Request">
           <stringProp name="HTTPSampler.domain">jsonplaceholder.typicode.com</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/posts/1</stringProp>
@@ -301,7 +301,7 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="DELETE_JsonPlaceholderHTTP Request" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="DELETE_JsonPlaceholderHTTP Request">
           <stringProp name="HTTPSampler.domain">jsonplaceholder.typicode.com</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/posts/1</stringProp>
@@ -324,7 +324,7 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PATCH_JsonPlaceholderHTTP Request" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PATCH_JsonPlaceholderHTTP Request">
           <stringProp name="HTTPSampler.domain">jsonplaceholder.typicode.com</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/posts/1</stringProp>
@@ -353,7 +353,7 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer">
           <stringProp name="ConstantTimer.delay">1000</stringProp>
           <stringProp name="RandomTimer.range">2000</stringProp>
         </UniformRandomTimer>
@@ -409,6 +409,69 @@
             </collectionProp>
           </elementProp>
           <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
+        </BackendListener>
+        <hashTree/>
+        <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener Datadog">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="apiKey" elementType="Argument">
+                <stringProp name="Argument.name">apiKey</stringProp>
+                <stringProp name="Argument.value">a41e5adca44e05ac40811a8e7541bef4</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="datadogUrl" elementType="Argument">
+                <stringProp name="Argument.name">datadogUrl</stringProp>
+                <stringProp name="Argument.value">https://api.datadoghq.com/api/</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="logIntakeUrl" elementType="Argument">
+                <stringProp name="Argument.name">logIntakeUrl</stringProp>
+                <stringProp name="Argument.value">https://http-intake.logs.datadoghq.com/v1/input/</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metricsMaxBatchSize" elementType="Argument">
+                <stringProp name="Argument.name">metricsMaxBatchSize</stringProp>
+                <stringProp name="Argument.value">200</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="logsBatchSize" elementType="Argument">
+                <stringProp name="Argument.name">logsBatchSize</stringProp>
+                <stringProp name="Argument.value">500</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sendResultsAsLogs" elementType="Argument">
+                <stringProp name="Argument.name">sendResultsAsLogs</stringProp>
+                <stringProp name="Argument.value">true</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="includeSubresults" elementType="Argument">
+                <stringProp name="Argument.name">includeSubresults</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="excludeLogsResponseCodeRegex" elementType="Argument">
+                <stringProp name="Argument.name">excludeLogsResponseCodeRegex</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="samplersRegex" elementType="Argument">
+                <stringProp name="Argument.name">samplersRegex</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="customTags" elementType="Argument">
+                <stringProp name="Argument.name">customTags</stringProp>
+                <stringProp name="Argument.value">application:api-test,env:dev,source:jenkins-local</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="statisticsCalculationMode" elementType="Argument">
+                <stringProp name="Argument.name">statisticsCalculationMode</stringProp>
+                <stringProp name="Argument.value">ddsketch</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.datadog.jmeter.plugins.DatadogBackendClient</stringProp>
         </BackendListener>
         <hashTree/>
       </hashTree>
